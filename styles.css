@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(56, 60, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#input-container{
+    display: flex;
+    gap:10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.inputs {
+    border: none;
+    background-color: white;
+    outline-color: white;
+    outline-width: 1px;
+    margin-top: 8px;
+    width: 270px;
+    height: 40px;
+}
+
+::placeholder {
+    font-size: 18px;
+    text-align: center;
+}
+
+#btn-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.btn {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    font-size: 25px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+#return {
+    color: black;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.outputs {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.oots {
+    text-align: center;
+    color: white;
+}
+
+#all-outs {
+    margin-top: 5px;
+}
+
+#clear {
+    color: black;
+    background-color: white;
+    margin-top: 8px;
+}
