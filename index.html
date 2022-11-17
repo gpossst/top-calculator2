@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +11,26 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div id="container">
-        <h1>Calculate!</h1>
-        <div id="input-container">
-            <div class="input" id="first-in">
-                <input type="number" placeholder="# input" id="box-one" class="inputs">
-            </div>
-        </div>
-        <div id="btn-container">
+        <div id="grid-container">
+            <div class="screen"></div>
+            <button id="clear" class="btn" onclick="selectClear()">ac</button>
             <button id="add" class="btn" onclick="selectAdd()">+</button>
+            <button class="btn" onclick="numberPress(7)">7</button>
+            <button class="btn" onclick="numberPress(8)">8</button>
+            <button class="btn" onclick="numberPress(9)">9</button>
             <button id="subtract" class="btn" onclick="selectSubtract()">-</button>
+            <button class="btn" onclick="numberPress(4)">4</button>
+            <button class="btn" onclick="numberPress(5)">5</button>
+            <button class="btn" onclick="numberPress(6)">6</button>
             <button id="multiply" class="btn" onclick="selectMultiply()">*</button>
+            <button class="btn" onclick="numberPress(1)">1</button>
+            <button class="btn" onclick="numberPress(2)">2</button>
+            <button class="btn" onclick="numberPress(3)">3</button>
             <button id="divide" class="btn" onclick="selectDivide()">÷</button>
+            <button class="btn" id="span-two" onclick="numberPress(0)">0</button>
+            <button class="btn" onclick="numberPress('.')">.</button>
+            <button id="return" class="btn" onclick="selectReturn()">=</button>
         </div>
-        <button id="return" onclick="selectReturn()">return</button>
-        <button id="clear" onclick="clear()">clear</button>
     </div> 
 </body>
 </html>

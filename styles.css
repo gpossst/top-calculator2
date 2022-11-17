@@ -32,16 +32,14 @@ body {
     text-align: center;
 }
 
-#btn-container {
-    display: flex;
-    gap: 30px;
-    margin-top: 20px;
+#grid-container {
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px;
 }
 
 .btn {
-    height: 40px;
-    width: 40px;
-    background-color: white;
+    background-color: white, 70%;
     font-size: 25px;
 }
 
@@ -51,12 +49,6 @@ h1 {
 
 h2 {
     color: white;
-}
-
-#return {
-    color: black;
-    background-color: white;
-    margin-top: 8px;
 }
 
 .outputs {
@@ -83,7 +75,24 @@ h2 {
 }
 
 #clear {
-    color: black;
+    grid-column: span 3;
+}
+
+#span-two {
+    grid-column: span 2;
+}
+
+.screen {
+    display: flex;
+    grid-column: span 4;
     background-color: white;
-    margin-top: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+
+.btn:hover {
+    background-color: 100%;
 }
