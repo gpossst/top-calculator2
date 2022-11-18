@@ -1,23 +1,46 @@
 const screen = document.querySelector('.screen');
-let operator;
+let operator = [];
 let buttonInputs = [];
 let operands = [];
+let output;
 
+function operate(operands, operator) {
 
+    if(operator[0] == 'add'){
+        output = +operands[1] + +operands[0];
+        console.log(output);
+        operands.unshift(output);
+    } else if (operator[0] == 'subtract'){
+        output = +operands[1] - +operands[0];
+        console.log(output);
+        operands.unshift(output);
+    } else if (operator[0] == 'multiply'){
+        output = +operands[1] * +operands[0];
+        console.log(output);
+        operands.unshift(output);
+    } else if (operator[0] == 'divide'){
+        output = +operands[1] / +operands[0];
+        console.log(output);
+        operands.unshift(output);
+    }
 
+    buttonInputs = [];
+    operator = [];
+    screen.innerText = output
+}
 
-
-
-function selectClear(){
+function selectClear() {
     operands = [];
     buttonInputs =[];
-    operator = '';
+    operator = [];
     populateScreen();
 }
 //clear all
 
 function inputString(buttonInputs) {
-    operands.unshift(buttonInputs.join(''));
+    if (buttonInputs != ''){
+        operands.unshift(buttonInputs.join(''));
+    }
 }
 //turns inputs array into a string to be shown on screen and used in operation
 
@@ -34,19 +57,53 @@ function numberPress(num) {
 //press number buttons
 
 function selectAdd() {
-    operator = 'add';
+    if (buttonInputs != '' || operator.length > 0) {
+    operator.unshift('add');
+    }
     inputString(buttonInputs);
+    buttonInputs = [];
+    if (operator[0] == operator[1]) {
+        inputString(buttonInputs);
+        operate(operands, operator);
+    }
 }
 function selectSubtract() {
-    operator = 'subtract';
+    if (buttonInputs != '' || operator.length > 0) {
+        operator.unshift('subtract');
+        }
     inputString(buttonInputs);
+    buttonInputs = [];
+    if (operator[0] == operator[1]) {
+        inputString(buttonInputs);
+        operate(operands, operator);
+    }
 }
 function selectMultiply() {
-    operator = 'multiply';
+    if (buttonInputs != '' || operator.length > 0) {
+        operator.unshift('multiply');
+        }
     inputString(buttonInputs);
+    buttonInputs = [];
+    if (operator[0] == operator[1]) {
+        inputString(buttonInputs);
+        operate(operands, operator);
+    }
 }
 function selectDivide() {
-    operator = 'divide';
+    if (buttonInputs != '' || operator.length > 0) {
+        operator.unshift('divide');
+        }
     inputString(buttonInputs);
+    buttonInputs = [];
+    if (operator[0] == operator[1]) {
+        inputString(buttonInputs);
+        operate(operands, operator);
+    }
 }
 //switch to operators
+
+
+function selectReturn() {
+    inputString(buttonInputs);
+    operate(operands, operator);
+}
