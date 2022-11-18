@@ -4,6 +4,7 @@ let buttonInputs = [];
 let operands = [];
 let output;
 let pressed = 0;
+let dot = 0;
 
 
 
@@ -59,6 +60,14 @@ function numberPress(num) {
     pressed++;
 }
 //press number buttons
+
+function dotPress(num) {
+    if (dot < 1){
+        buttonInputs.push(num);
+        populateScreen();
+        dot++;
+    }
+}
 
 function selectAdd() {
     if (buttonInputs != ''|| operator.length > 0 && pressed > 0) {
